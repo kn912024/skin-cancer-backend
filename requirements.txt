@@ -2,7 +2,6 @@ Flask==3.0.3
 Flask_Cors==4.0.0
 flwr==1.8.0
 numpy==1.24.1
-Pillow==9.4.0
 Pillow==10.3.0
 Requests==2.31.0
 tensorflow==2.15.0
