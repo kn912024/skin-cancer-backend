@@ -70,7 +70,7 @@ class AggregateWeightsCallBack(fl.server.strategy.FedAvg):
 
 def start_server():
     fl.server.start_server(
-    server_address="0.0.0.0:8080",
+    server_address="https://skin-cancer-backend.onrender.com:8080",
     config=fl.server.ServerConfig(num_rounds=5),
     strategy=AggregateWeightsCallBack()
     )
