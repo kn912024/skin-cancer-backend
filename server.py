@@ -6,7 +6,6 @@ from tensorflow import keras
 import numpy as np
 from io import BytesIO
 from PIL import Image
-from threading import Thread
 import json
 
 app = Flask(__name__)
@@ -70,7 +69,7 @@ class AggregateWeightsCallBack(fl.server.strategy.FedAvg):
 
 def start_server():
     fl.server.start_server(
-    server_address="0.0.0.0:8080",
+    server_address="0.0.0.0:8090",
     config=fl.server.ServerConfig(num_rounds=5),
     strategy=AggregateWeightsCallBack()
     )
@@ -94,4 +93,4 @@ def get_weights():
     return jsonify({"message": "Weights"})
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
